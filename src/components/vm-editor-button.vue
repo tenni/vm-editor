@@ -1,9 +1,9 @@
 <template>
-  <div class="vm-editor-button" @mouseleave="hideSlot" @click="showSlot">
+  <div class="vm-editor-button">
     <span class="button">
-      <img :src="require('../assets/iconimg/' + icon + '.png')" width="16" height="16">
+      
     </span>
-    <slot v-if="slot"></slot>
+    
   </div>
 </template>
 <style lang="scss">
@@ -28,6 +28,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      background:#000;
       &:hover{
         background-color: #eee;
       }
@@ -36,25 +37,6 @@
 </style>
 <script>
 export default {
-  name: 'VmEditorButton',
-  props: {
-    icon: {
-      type: String,
-      default: 'fa fa-header'
-    }
-  },
-  data: function () {
-    return {
-      slot: false
-    }
-  },
-  methods: {
-    showSlot () {
-      this.slot = this.slot === false ? true : false
-    },
-    hideSlot () {
-      this.slot = false
-    }
-  }
+  name: 'VmEditorButton'
 }
 </script>
